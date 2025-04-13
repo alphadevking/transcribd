@@ -1,7 +1,8 @@
-import { createListCollection, Portal, Textarea, Box, Heading, useDialog, CloseButton, Button, Dialog, Input, Tabs, Text, Field, Fieldset, InputGroup } from '@chakra-ui/react';
+import { createListCollection, Portal, Textarea, Box, Heading, useDialog, CloseButton, Button, Dialog, Input, Tabs, Text, Field, Fieldset, InputGroup, Span } from '@chakra-ui/react';
 import { Select } from '@chakra-ui/react';
 import { useState } from 'react';
 import { LuSettings2 } from 'react-icons/lu';
+import { TbNotification } from 'react-icons/tb';
 import AudioRecorder from '~/components/AudioRecorder';
 import FileUploader from '~/components/FileUploader';
 import { toaster, Toaster } from "~/components/ui/toaster";
@@ -32,8 +33,19 @@ export function Welcome() {
 
   return (
     <Box p="4" display="flex" flexDir="column" alignItems="start" gap={5}>
+      <Box display="flex" justifyContent="start" alignItems="center" width="full" gap={2}>
+        <TbNotification size={24} />
+        <Text fontWeight="bold" fontSize="xl" opacity={0.75}>Site is still under Construction!!!</Text>
+      </Box>
       <Box display="flex" justifyContent="space-between" alignItems="center" width="full">
-        <Heading>Audio Transcription</Heading>
+        <Heading spaceX={2}>
+          <Span color={"cyan.400"}>
+            Transcribd
+          </Span>
+          <Span color={"gray.500"}>
+            | Audio Transcription
+          </Span>
+        </Heading>
         <Button variant="outline" outline="none" size="sm" onClick={() => dialog.setOpen(true)}>
           <LuSettings2 />
         </Button>
