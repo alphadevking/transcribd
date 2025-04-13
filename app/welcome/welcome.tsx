@@ -9,7 +9,7 @@ import type { TranscribeAudioFileProps } from '~/services/transcribe';
 
 export function Welcome() {
   const [transcription, setTranscription] = useState<string | null>(null);
-  const [api, setApi] = useState<TranscribeAudioFileProps['api']>('elevenlabs');
+  const [api, setApi] = useState<TranscribeAudioFileProps['api']>('assemblyai');
   const [apiKey, setApiKey] = useState<string | null>(localStorage.getItem(`${api}-api-key`) || null);
   const apiOptions = createListCollection({
     items: [

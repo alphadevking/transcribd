@@ -4,7 +4,7 @@ const elevenLabsClient = new ElevenLabsClient({
     apiKey: import.meta.env.VITE_PUBLIC_ELEVEN_LABS_API_KEY
 });
 
-export async function transcribeAudio(file: File) {
+export async function elevenLabsTranscribeAudio(file: File) {
     const response = await elevenLabsClient.speechToText.convert({
         file: file,
         model_id: "scribe_v1", // Note: underscore, not hyphen
