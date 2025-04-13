@@ -7,6 +7,14 @@ import AudioRecorder from '~/components/AudioRecorder';
 import FileUploader from '~/components/FileUploader';
 import { toaster, Toaster } from "~/components/ui/toaster";
 import type { TranscribeAudioFileProps } from '~/services/transcribe';
+import type { Route } from '../+types/root';
+
+export function meta({ }: Route.MetaArgs) {
+  return [
+    { title: "Transcribd | Audio Transcription" },
+    { name: "description", content: "Transcribd is a platform for transcribing audio files. It uses AssemblyAI and ElevenLabs APIs to transcribe audio files." },
+  ];
+}
 
 export function Welcome() {
   const [transcription, setTranscription] = useState<string | null>(null);
