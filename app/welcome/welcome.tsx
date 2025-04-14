@@ -1,5 +1,4 @@
-import { createListCollection, Portal, Textarea, Box, Heading, useDialog, CloseButton, Button, Dialog, Input, Tabs, Text, Field, Fieldset, InputGroup, Span } from '@chakra-ui/react';
-import { Select } from '@chakra-ui/react';
+import { createListCollection, Portal, Textarea, Box, Heading, useDialog, CloseButton, Button, Dialog, Input, Tabs, Text, Field, Fieldset, InputGroup, Span, Select, Image } from '@chakra-ui/react';
 import { useState } from 'react';
 import { LuSettings2 } from 'react-icons/lu';
 import { TbNotification } from 'react-icons/tb';
@@ -7,14 +6,7 @@ import AudioRecorder from '~/components/AudioRecorder';
 import FileUploader from '~/components/FileUploader';
 import { toaster, Toaster } from "~/components/ui/toaster";
 import type { TranscribeAudioFileProps } from '~/services/transcribe';
-import type { Route } from '../+types/root';
-
-export function meta({ }: Route.MetaArgs) {
-  return [
-    { title: "Transcribd | Audio Transcription" },
-    { name: "description", content: "Transcribd is a platform for transcribing audio files. It uses AssemblyAI and ElevenLabs APIs to transcribe audio files." },
-  ];
-}
+import logo from '~/assets/transcribd.png';
 
 export function Welcome() {
   const [transcription, setTranscription] = useState<string | null>(null);
@@ -46,7 +38,8 @@ export function Welcome() {
         <Text fontWeight="bold" fontSize="xl" opacity={0.75}>Site is still under Construction!!!</Text>
       </Box>
       <Box display="flex" justifyContent="space-between" alignItems="center" width="full">
-        <Heading spaceX={2}>
+        <Heading display="flex" flexDir="row" alignItems="center" gap={2}>
+          <Image src={logo} alt="Transcribd" width={12} height={12} />
           <Span color={"cyan.400"}>
             Transcribd
           </Span>
